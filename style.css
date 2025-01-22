@@ -5,9 +5,15 @@ body {
   padding: 0;
   overflow: hidden;
 }
+/* @font-face {
+  font-family: "Cyrene";
+  src: url("./Cyrene.otf") format("truetype");
+} */
+
 @font-face {
   font-family: "Cyrene";
   src: url("./Cyrene.otf") format("truetype");
+  font-display: swap;
 }
 
 /* Keyframe for fade-in effect */
@@ -325,7 +331,7 @@ button {
 }
 
 /* hi charnele */
-/* .text-container {
+.text-container {
   font-size: 36px;
   color: white;
   opacity: 0;
@@ -334,4 +340,4 @@ button {
 
 .text-container.initial {
   font-size: 80px;
-} */
+}
