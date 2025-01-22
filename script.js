@@ -4,7 +4,7 @@ const poeticTextContainer = document.getElementById("poetic-text");
 const texts = [
   { text: "Hi Charnele", duration: 6000, class: "initial" }, // First text with large font size
   {
-    text: "Ever since I met you",
+    text: "From the day I met you",
     duration: 7000,
     class: ""
   },
