@@ -1,0 +1,441 @@
+html,
+body {
+  font-family: "Cyrene";
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: "Cyrene";
+  src: url("./Cyrene.otf") format("truetype");
+}
+
+.text-container {
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  font-size: 90px;
+  color: white;
+  opacity: 0.8;
+  user-select: none;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+:root {
+  --color-bg1: rgb(108, 0, 162);
+  --color-bg2: rgb(0, 17, 82);
+  --color1: 18, 113, 255;
+  --color2: 221, 74, 255;
+  --color3: 100, 220, 255;
+  --color4: 200, 50, 50;
+  --color5: 180, 180, 50;
+  --color-interactive: 140, 100, 255;
+  --circle-size: 80%;
+  --blending: hard-light;
+}
+
+@keyframes moveInCircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveVertical {
+  0% {
+    transform: translateY(-50%);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes moveHorizontal {
+  0% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  50% {
+    transform: translateX(50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+}
+
+.gradient-bg {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
+  top: 0;
+  left: 0;
+
+  svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .gradients-container {
+    filter: url(#goo) blur(40px);
+    width: 100%;
+    height: 100%;
+  }
+
+  .g1 {
+    position: absolute;
+    background: radial-gradient(
+        circle at center,
+        rgba(var(--color1), 0.8) 0,
+        rgba(var(--color1), 0) 50%
+      )
+      no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: center center;
+    animation: moveVertical 30s ease infinite;
+
+    opacity: 1;
+  }
+
+  .g2 {
+    position: absolute;
+    background: radial-gradient(
+        circle at center,
+        rgba(var(--color2), 0.8) 0,
+        rgba(var(--color2), 0) 50%
+      )
+      no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 20s reverse infinite;
+
+    opacity: 1;
+  }
+
+  .g3 {
+    position: absolute;
+    background: radial-gradient(
+        circle at center,
+        rgba(var(--color3), 0.8) 0,
+        rgba(var(--color3), 0) 50%
+      )
+      no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    left: calc(50% - var(--circle-size) / 2 - 500px);
+
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 40s linear infinite;
+
+    opacity: 1;
+  }
+
+  .g4 {
+    position: absolute;
+    background: radial-gradient(
+        circle at center,
+        rgba(var(--color4), 0.8) 0,
+        rgba(var(--color4), 0) 50%
+      )
+      no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: calc(50% - 200px);
+    animation: moveHorizontal 40s ease infinite;
+
+    opacity: 0.7;
+  }
+
+  .g5 {
+    position: absolute;
+    background: radial-gradient(
+        circle at center,
+        rgba(var(--color5), 0.8) 0,
+        rgba(var(--color5), 0) 50%
+      )
+      no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: calc(var(--circle-size) * 2);
+    height: calc(var(--circle-size) * 2);
+    top: calc(50% - var(--circle-size));
+    left: calc(50% - var(--circle-size));
+
+    transform-origin: calc(50% - 800px) calc(50% + 200px);
+    animation: moveInCircle 20s ease infinite;
+
+    opacity: 1;
+  }
+
+  .interactive {
+    position: absolute;
+    background: radial-gradient(
+        circle at center,
+        rgba(var(--color-interactive), 0.8) 0,
+        rgba(var(--color-interactive), 0) 50%
+      )
+      no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: 100%;
+    height: 100%;
+    top: -50%;
+    left: -50%;
+
+    opacity: 0.7;
+  }
+}
+
+/* carousel */
+/*
+
+The MIT License
+
+Copyright (c) 2024 0xERR0R - https://codepen.io/0xERR0R
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+
+:root {
+  --off-white: #fafaf0;
+  --light-gray: #9ca6a2;
+}
+
+@keyframes infiniteLoop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(calc(-100px * 10), 0, 0);
+  }
+}
+
+section {
+  background: var(--off-white);
+}
+
+.brandsCarousel {
+  max-width: 960px;
+  max-height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.brandsCarousel::before,
+.brandsCarousel::after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(
+    to right,
+    rgba(250, 250, 240, 1) 0%,
+    rgba(250, 250, 240, 0) 100%
+  );
+  position: absolute;
+  z-index: 2;
+}
+
+.brandsCarousel::before {
+  top: 0;
+  left: 0;
+}
+
+.brandsCarousel::after {
+  top: 0;
+  right: 0;
+  transform: rotateZ(180deg);
+}
+
+.carouselTrack {
+  width: calc(100px * 20);
+  animation: infiniteLoop 10s linear infinite;
+  animation-fill-mode: forwards;
+  will-change: transform;
+}
+
+.brandLogo {
+  width: 100px;
+  height: 50px;
+  align-items: center;
+  margin: auto;
+  overflow: hidden;
+}
+
+.brandLogo svg {
+  width: 100px;
+  height: 50px;
+}
+
+/*
+
+NOTE: The content below includes copyright notice information;
+      You may safely omit this content, as it is not essential to the functionality of the carousel.
+
+*/
+
+:root {
+  --dark-gray: #71797e;
+  --heart-red: #a60311;
+  --light-blue: #0096ff;
+}
+
+@import url(https://fonts.bunny.net/css?family=source-code-pro:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i);
+
+@keyframes beat {
+  to {
+    transform: scale(1.2);
+  }
+}
+
+.copyrightNotice {
+  font-family: "Source Code Pro", monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+
+#heart {
+  width: 1rem;
+  height: 1rem;
+  animation: beat 0.25s infinite alternate;
+}
+
+a {
+  text-decoration: none;
+  color: var(--light-blue);
+  position: relative;
+}
+
+a::after {
+  content: "";
+  width: 0;
+  height: 0.125rem;
+  left: 0;
+  bottom: 0;
+  transition: width 0.4s ease;
+  background: var(--light-blue);
+  position: absolute;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* carousel */
+:root {
+  --off-white: #fafaf0;
+  --light-gray: #9ca6a2;
+}
+
+@keyframes infiniteLoop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(calc(-100px * 10), 0, 0);
+  }
+}
+
+section {
+  background: var(--off-white);
+}
+
+.brandsCarousel {
+  max-width: 960px;
+  max-height: 100px;
+  margin: auto;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0; /* Moves the carousel to the bottom of the page */
+  left: 50%; /* Centers the carousel horizontally */
+  transform: translateX(-50%); /* Ensures perfect centering */
+  z-index: 10; /* Ensures visibility over other content */
+  background: var(--off-white); /* Matches the page background */
+}
+
+.brandsCarousel::before,
+.brandsCarousel::after {
+  content: "";
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(
+    to right,
+    rgba(250, 250, 240, 1) 0%,
+    rgba(250, 250, 240, 0) 100%
+  );
+  position: absolute;
+  z-index: 2;
+}
+
+.brandsCarousel::before {
+  top: 0;
+  left: 0;
+}
+
+.brandsCarousel::after {
+  top: 0;
+  right: 0;
+  transform: rotateZ(180deg);
+}
+
+.carouselTrack {
+  width: calc(100px * 20);
+  animation: infiniteLoop 10s linear infinite;
+  animation-fill-mode: forwards;
+  will-change: transform;
+}
+
+.brandLogo {
+  width: 100px;
+  height: 50px;
+  align-items: center;
+  margin: auto;
+  overflow: hidden;
+}
+
+.brandLogo svg {
+  width: 100px;
+  height: 50px;
+}
