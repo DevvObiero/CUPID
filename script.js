@@ -4,13 +4,20 @@ const poeticTextContainer = document.getElementById("poetic-text");
 const texts = [
   { text: "Hi Charnele", duration: 6000, class: "initial" }, // First text with large font size
   {
-    text: "Ever since I met you, I started forgetting  possibilities of a future without you",
+    text: "Ever since I met you",
     duration: 7000,
     class: ""
   },
+  {
+    text: "I started forgetting any possibilities of a future without you",
+    duration: 6000,
+    class: ""
+  },
   { text: "You mean a lot to me", duration: 3000, class: "" },
-  { text: "But staying hurts a lot", duration: 3000, class: "" },
+  { text: "But right now staying hurts a lot", duration: 3000, class: "" },
   { text: "I'm scared", duration: 3000, class: "" },
+  { text: "And Insecure", duration: 3000, class: "" },
+
   { text: "One day I will forget everything", duration: 3000, class: "" },
   { text: "But you...", duration: 3000, class: "" },
   { text: "Never", duration: 3000, class: "" },
@@ -19,9 +26,8 @@ const texts = [
     text: "In every beautiful flower I come across",
     duration: 3000,
     class: ""
-    },
-    { text: "Every beautiful thing", duration: 3000, class: "" }
-  
+  },
+  { text: "Every beautiful thing", duration: 3000, class: "" },
   { text: "Maybe when we're ready", duration: 3000, class: "" },
   { text: "We'll start things over", duration: 3000, class: "" },
   { text: "Because for me...", duration: 3000, class: "" },
@@ -50,3 +56,14 @@ function showText() {
 
 // Start the text animation
 showText();
+
+//music button
+
+const playBtn = document.getElementById("play-btn");
+const audio = document.getElementById("background-music");
+
+// Play the audio when the play button is clicked
+playBtn.addEventListener("click", function () {
+  audio.play();
+  playBtn.style.display = "none"; // Hide the play button after clicking
+});
