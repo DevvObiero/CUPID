@@ -33,7 +33,16 @@ const texts = [
   { text: "We'll start things over", duration: 3000, class: "" },
   { text: "Because to me...", duration: 3000, class: "" },
   { text: "There will never be another you", duration: 3000, class: "" },
-  { text: "I LOVE YOU", duration: 3000, class: "" }
+  { text: "There will never be another you", duration: 3000, class: "" },
+  { text: "So I decided to make this", duration: 3000, class: "" },
+  { text: "I think i'll go to sleep now", duration: 3000, class: "" },
+  {
+    text: "At least then.... I might be confident enough to look you in the eye",
+    duration: 5000,
+    class: ""
+  },
+
+  { text: "I LOVE YOU", duration: 6000, class: "" }
 ];
 
 let currentIndex = 0;
