@@ -1,50 +1,42 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const textContainer = document.getElementById("text-container");
+window.onload = function () {
+  const textContainer = document.querySelector(".text-container");
   const poeticTextContainer = document.getElementById("poetic-text");
-  const buttonsContainer = document.getElementById("buttons-container");
 
-  let textIndex = 0;
   const texts = [
-    { content: "Hi Charnel", duration: 6000 },
-    {
-      content:
-        "Ever since I met you, I started forgetting of a future without you.",
-      duration: 4000
-    },
-    { content: "You mean a lot to me.", duration: 3000 },
-    { content: "Will you be my Valentine?", duration: 3000 }
+    "Hi Charnelle",
+    "Ever since I met you",
+    "I started Forgeting a future without you",
+    "You mean a lot to me.",
+    "But staying Hurts a lot ",
+    "I'm Scared ",
+    "One day i will forget everything ",
+    "But  You...",
+    "Never",
+    "I see you ",
+    "In every beautiful flower I come across"
   ];
 
+  let currentTextIndex = 0;
+
   function changeText() {
-    if (textIndex < texts.length) {
-      // Set the new text content
-      if (textIndex === 0) {
-        textContainer.textContent = texts[textIndex].content;
-        textContainer.style.opacity = 1; // Fade in
-      } else {
-        poeticTextContainer.textContent = texts[textIndex].content;
-        poeticTextContainer.style.opacity = 1; // Fade in
-      }
+    // Show the current text
+    textContainer.textContent = texts[currentTextIndex];
+    textContainer.style.opacity = 1;
 
-      setTimeout(() => {
-        // Fade out the current text
-        if (textIndex === 0) {
-          textContainer.style.opacity = 0;
-        } else {
-          poeticTextContainer.style.opacity = 0;
-        }
+    // Fade out the text after a certain duration
+    setTimeout(() => {
+      textContainer.style.opacity = 0;
+    }, 4000); // Fade out after 4 seconds
 
-        setTimeout(() => {
-          textIndex++;
-          changeText();
-        }, 1000); // Wait for fade-out to complete before changing text
-      }, texts[textIndex].duration);
-    } else {
-      // Show the buttons after all text has displayed
-      buttonsContainer.style.display = "block";
+    // Increment text index for next change
+    currentTextIndex++;
+
+    // Handle the last text case (poetic and final text)
+    if (currentTextIndex < texts.length) {
+      setTimeout(changeText, 7000); // Change text every 5 seconds (overlap with fade out)
     }
   }
 
-  // Start the text changes
+  // Start the text change process
   changeText();
-});
+};
