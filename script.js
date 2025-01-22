@@ -27,11 +27,13 @@ const texts = [
     duration: 3000,
     class: ""
   },
-  { text: "Every beautiful thing", duration: 3000, class: "" },
+  { text: "In everything that brings me joy", duration: 3000, class: "" },
   { text: "Maybe when we're ready", duration: 3000, class: "" },
+  { text: "When the time is right", duration: 3000, class: "" },
   { text: "We'll start things over", duration: 3000, class: "" },
-  { text: "Because for me...", duration: 3000, class: "" },
-  { text: "There will never be another you", duration: 3000, class: "" }
+  { text: "Because to me...", duration: 3000, class: "" },
+  { text: "There will never be another you", duration: 3000, class: "" },
+  { text: "I LOVE YOU", duration: 3000, class: "" }
 ];
 
 let currentIndex = 0;
