@@ -37,10 +37,11 @@ const texts = [
   { text: "So I decided to make this", duration: 3000, class: "" },
   { text: "I think i'll go to sleep now", duration: 3000, class: "" },
   {
-    text: "At least then.... I might be confident enough to look you in the eye",
-    duration: 5000,
+    text: "At least ,in my dreams  ",
+    duration: 3000,
     class: ""
   },
+  { text: "I might be able to look you in the eye", duration: 3000, class: "" },
 
   { text: "I LOVE YOU", duration: 6000, class: "" }
 ];
