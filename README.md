@@ -1,3 +1,3 @@
 # CUPID
-Asking her to be my valentines
+My message to her
 charnelee.netlify.app
